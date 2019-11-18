@@ -1,5 +1,6 @@
 <resources>
-    <string name="app_name">2 Atividades</string>
-    <string name="edittext1">Digite o texto aqui</string>
-    <string name="button1">Enviar</string>
+    <string name="app_name">Delivery Bagual</string>
+    <string name="pedidos">Pedidos</string>
+    <string name="listavazia">Nenhum pedido em andamento</string>
+    <string name="novopedido">Novo pedido</string>
 </resources>
