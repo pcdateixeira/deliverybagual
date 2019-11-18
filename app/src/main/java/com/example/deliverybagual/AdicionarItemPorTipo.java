@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-public class AdicionarTipodeItem extends AppCompatActivity {
+public class AdicionarItemPorTipo extends AppCompatActivity {
 
     private TextView titulo;
     private Button itemUm;
@@ -20,7 +20,7 @@ public class AdicionarTipodeItem extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.adicionar_tipode_item);
+        setContentView(R.layout.adicionar_item_por_tipo);
 
         titulo = findViewById(R.id.titulo);
         itemUm = findViewById(R.id.botaoItemUm);
@@ -31,28 +31,28 @@ public class AdicionarTipodeItem extends AppCompatActivity {
 
         String tipoItem = getIntent().getStringExtra("tipo");
         switch(tipoItem) {
-            case "bovina":
+            case "Bovina":
                 titulo.setText(R.string.bovina);
                 itemUm.setText(R.string.maminha);
                 itemDois.setText(R.string.picanha);
                 itemTres.setText(R.string.costela);
                 itemQuatro.setText(R.string.chuleta);
                 break;
-            case "suina":
+            case "Suína":
                 titulo.setText(R.string.suina);
-                itemUm.setText(R.string.costela);
+                itemUm.setText(R.string.pernil);
                 itemDois.setText(R.string.lombo);
-                itemTres.setText(R.string.salsichao);
-                itemQuatro.setText(R.string.picanha);
+                itemTres.setText(R.string.linguica);
+                itemQuatro.setText(R.string.bisteca);
                 break;
-            case "frango":
+            case "Frango":
                 titulo.setText(R.string.frango);
                 itemUm.setText(R.string.peito);
                 itemDois.setText(R.string.coxa);
                 itemTres.setText(R.string.sobrecoxa);
                 itemQuatro.setText(R.string.coracao);
                 break;
-            case "aperitivos":
+            case "Aperitivos":
                 titulo.setText(R.string.aperitivos);
                 itemUm.setText(R.string.polenta);
                 itemDois.setText(R.string.paoalho);
@@ -64,6 +64,14 @@ public class AdicionarTipodeItem extends AppCompatActivity {
         itemDois.setVisibility(View.VISIBLE);
         itemTres.setVisibility(View.VISIBLE);
         itemQuatro.setVisibility(View.VISIBLE);
+    }
+
+    public void selecionaItem(View view) {
+        Intent i = new Intent(this, AdicionarItemPorTamanho.class);
+        Button b = (Button) view;
+
+        i.putExtra("tipo", b.getText().toString());
+        startActivity(i);
     }
 
     public void VerCarrinho(View view)

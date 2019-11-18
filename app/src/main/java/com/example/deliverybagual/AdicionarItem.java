@@ -30,22 +30,11 @@ public class AdicionarItem extends AppCompatActivity {
         botaoCarrinho = findViewById(R.id.botaoCarrinho);
     }
 
-    public void maisUmItem(View view) {
-        Intent i = new Intent(this, AdicionarTipodeItem.class);
+    public void selecionaItem(View view) {
+        Intent i = new Intent(this, AdicionarItemPorTipo.class);
+        Button b = (Button) view;
 
-        switch(view.getId()) {
-            case R.id.botaoBovina:
-                i.putExtra("tipo", "bovina");
-                break;
-            case R.id.botaoSuina:
-                i.putExtra("tipo", "suina");
-                break;
-            case R.id.botaoFrango:
-                i.putExtra("tipo", "frango");
-                break;
-            case R.id.botaoAperitivos:
-                i.putExtra("tipo", "aperitivos");
-        }
+        i.putExtra("tipo", b.getText().toString());
         startActivity(i);
     }
 

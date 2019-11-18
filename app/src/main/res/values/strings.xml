@@ -13,8 +13,10 @@
     <string name="picanha">Picanha</string>
     <string name="costela">Costela</string>
     <string name="chuleta">Ripa da chuleta</string>
+    <string name="pernil">Pernil</string>
     <string name="lombo">Lombo</string>
-    <string name="salsichao">Salsichão</string>
+    <string name="linguica">Linguiça</string>
+    <string name="bisteca">Bisteca</string>
     <string name="peito">Peito</string>
     <string name="coxa">Coxa</string>
     <string name="sobrecoxa">Sobrecoxa</string>

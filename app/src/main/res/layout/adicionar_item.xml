@@ -38,7 +38,7 @@
         android:layout_marginStart="100dp"
         android:layout_marginLeft="100dp"
         android:layout_marginTop="200dp"
-        android:onClick="maisUmItem"
+        android:onClick="selecionaItem"
         android:text="@string/bovina"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -50,7 +50,7 @@
         android:layout_marginTop="200dp"
         android:layout_marginEnd="100dp"
         android:layout_marginRight="100dp"
-        android:onClick="maisUmItem"
+        android:onClick="selecionaItem"
         android:text="@string/suina"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -62,7 +62,7 @@
         android:layout_marginStart="100dp"
         android:layout_marginLeft="100dp"
         android:layout_marginTop="30dp"
-        android:onClick="maisUmItem"
+        android:onClick="selecionaItem"
         android:text="@string/frango"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/botaoBovina" />
@@ -74,7 +74,7 @@
         android:layout_marginTop="30dp"
         android:layout_marginEnd="100dp"
         android:layout_marginRight="100dp"
-        android:onClick="maisUmItem"
+        android:onClick="selecionaItem"
         android:text="@string/aperitivos"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/botaoSuina" />
