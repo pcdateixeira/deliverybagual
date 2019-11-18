@@ -35,16 +35,16 @@ public class AdicionarItem extends AppCompatActivity {
 
         switch(view.getId()) {
             case R.id.botaoBovina:
-                i.putExtra("data", "bovina");
+                i.putExtra("tipo", "bovina");
                 break;
             case R.id.botaoSuina:
-                i.putExtra("data", "suina");
+                i.putExtra("tipo", "suina");
                 break;
             case R.id.botaoFrango:
-                i.putExtra("data", "frango");
+                i.putExtra("tipo", "frango");
                 break;
             case R.id.botaoAperitivos:
-                i.putExtra("data", "aperitivos");
+                i.putExtra("tipo", "aperitivos");
         }
         startActivity(i);
     }

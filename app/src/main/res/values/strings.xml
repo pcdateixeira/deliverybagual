@@ -9,4 +9,18 @@
     <string name="suina">Suína</string>
     <string name="frango">Frango</string>
     <string name="aperitivos">Aperitivos</string>
+    <string name="maminha">Maminha</string>
+    <string name="picanha">Picanha</string>
+    <string name="costela">Costela</string>
+    <string name="chuleta">Ripa da chuleta</string>
+    <string name="lombo">Lombo</string>
+    <string name="salsichao">Salsichão</string>
+    <string name="peito">Peito</string>
+    <string name="coxa">Coxa</string>
+    <string name="sobrecoxa">Sobrecoxa</string>
+    <string name="coracao">Coraçãozinho</string>
+    <string name="polenta">Peito</string>
+    <string name="paoalho">Coxa</string>
+    <string name="xixo">Xixo</string>
+    <string name="maionese">Salada de maionese</string>
 </resources>
