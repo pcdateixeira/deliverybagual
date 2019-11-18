@@ -7,15 +7,73 @@
     tools:context=".AdicionarItemPorTamanho">
 
     <TextView
-        android:id="@+id/textView1"
+        android:id="@+id/titulo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="50dp"
-        android:text="TextView"
-        android:textSize="18sp"
+        android:layout_marginStart="151dp"
+        android:layout_marginLeft="151dp"
+        android:layout_marginTop="120dp"
+        android:layout_marginEnd="151dp"
+        android:layout_marginRight="151dp"
+        android:gravity="center_horizontal"
+        android:textSize="30sp"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/botaoAdicionar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="70dp"
+        android:layout_marginRight="70dp"
+        android:onClick="adicionaItem"
+        android:text="@string/adicionar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
+
+    <Button
+        android:id="@+id/botaoCarrinho"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="33dp"
+        android:layout_marginRight="33dp"
+        android:layout_marginBottom="54dp"
+        android:onClick="VerCarrinho"
+        android:text="@string/vercarrinho"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="400dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RadioButton
+            android:id="@+id/radioPorcaoPequena"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/porcaopequena"
+            android:visibility="invisible"
+            tools:layout_editor_absoluteX="87dp"
+            tools:layout_editor_absoluteY="532dp" />
+
+        <RadioButton
+            android:id="@+id/radioPorcaoGrande"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/porcaogrande"
+            android:visibility="invisible"
+            tools:layout_editor_absoluteX="87dp"
+            tools:layout_editor_absoluteY="564dp" />
+    </RadioGroup>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

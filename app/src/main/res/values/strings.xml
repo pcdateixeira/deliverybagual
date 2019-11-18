@@ -22,7 +22,10 @@
     <string name="sobrecoxa">Sobrecoxa</string>
     <string name="coracao">Coraçãozinho</string>
     <string name="polenta">Peito</string>
-    <string name="paoalho">Coxa</string>
+    <string name="paoalho">Pão de alho</string>
     <string name="xixo">Xixo</string>
     <string name="maionese">Salada de maionese</string>
+    <string name="porcaopequena">Espeto pequeno (700g)</string>
+    <string name="porcaogrande">Espeto grande (1,2kg)</string>
+    <string name="adicionar">Adicionar</string>
 </resources>
