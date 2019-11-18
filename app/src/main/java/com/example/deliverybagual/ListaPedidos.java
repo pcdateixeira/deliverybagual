@@ -22,7 +22,7 @@ public class ListaPedidos extends AppCompatActivity {
         botaoNovoPedido = findViewById(R.id.botaoNovoPedido);
     }
 
-    public void Send(View view)
+    public void NovoPedido(View view)
     {
         Intent i = new Intent(this, AdicionarItem.class);
         i.putExtra("data", tituloPedido.getText().toString());

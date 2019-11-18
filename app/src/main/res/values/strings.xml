@@ -3,4 +3,10 @@
     <string name="pedidos">Pedidos</string>
     <string name="listavazia">Nenhum pedido em andamento</string>
     <string name="novopedido">Novo pedido</string>
+    <string name="itens">Itens</string>
+    <string name="vercarrinho">Ver carrinho</string>
+    <string name="bovina">Bovina</string>
+    <string name="suina">Suína</string>
+    <string name="frango">Frango</string>
+    <string name="aperitivos">Aperitivos</string>
 </resources>
