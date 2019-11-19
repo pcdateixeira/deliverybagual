@@ -5,27 +5,37 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ListView;
 import android.widget.TextView;
 
-public class ListaPedidos extends AppCompatActivity {
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
-    private TextView tituloPedido;
-    private Button botaoNovoPedido;
+public class ListaPedidos extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.lista_pedidos);
+        this.setTitle("Pedidos");
 
-        tituloPedido = findViewById(R.id.tituloPedidos); // ID from component
-        botaoNovoPedido = findViewById(R.id.botaoNovoPedido);
+        List<String> pedidos = new ArrayList<>(Arrays.asList("Pedido"));
+        for (int i = 0; i < 30; i++) {
+            pedidos.add("Pedido");
+        }
+        ListView listView = (ListView) findViewById(R.id.pedidos_list_view);
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, pedidos);
+        listView.setAdapter(adapter);
     }
 
-    public void NovoPedido(View view)
+    public void novoPedido(View view)
     {
         Intent i = new Intent(this, AdicionarItem.class);
-        i.putExtra("data", tituloPedido.getText().toString());
+        //i.putExtra("data", tituloPedido.getText().toString());
         startActivity(i);
     }
 }

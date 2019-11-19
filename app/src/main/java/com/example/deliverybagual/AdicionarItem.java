@@ -21,13 +21,6 @@ public class AdicionarItem extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.adicionar_item);
-
-        itens = findViewById(R.id.itens);
-        botaoBovina = findViewById(R.id.botaoBovina);
-        botaoSuina = findViewById(R.id.botaoSuina);
-        botaoFrango = findViewById(R.id.botaoFrango);
-        botaoAperitivos = findViewById(R.id.botaoAperitivos);
-        botaoCarrinho = findViewById(R.id.botaoCarrinho);
     }
 
     public void selecionaItem(View view) {
