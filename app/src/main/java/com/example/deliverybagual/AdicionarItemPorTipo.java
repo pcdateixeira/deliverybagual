@@ -77,7 +77,6 @@ public class AdicionarItemPorTipo extends AppCompatActivity {
     public void verCarrinho(View view)
     {
         Intent i = new Intent(this, Carrinho.class);
-        i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(i);
     }
 }

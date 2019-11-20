@@ -7,11 +7,11 @@
     tools:context=".AdicionarItemPorTamanho">
 
     <TextView
-        android:id="@+id/texto_ajuda"
+        android:id="@+id/textoAjuda"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:text="@string/adicione_itens"
+        android:text="@string/adicioneitens"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -26,7 +26,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/texto_ajuda" />
+        app:layout_constraintTop_toBottomOf="@+id/textoAjuda" />
 
     <Button
         android:id="@+id/botaoAdicionar"
@@ -47,7 +47,7 @@
         android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
         android:onClick="verCarrinho"
-        android:text="@string/itens_adicionados"
+        android:text="@string/vercarrinho"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />

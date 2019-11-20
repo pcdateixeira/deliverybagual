@@ -112,16 +112,15 @@ public class AdicionarItemPorTamanho extends AppCompatActivity {
         radioPorcaoGrande.setVisibility(View.VISIBLE);
     }
 
+    // Os dois metodos abaixo sao iguais por enquanto, a diferenca e que o adicionaItem colocaria um item no carrinho de compras do usuario, enquanto o verCarrinho mandaria pro carrinho sem adicionar o item
     public void adicionaItem(View view) {
         Intent i = new Intent(this, Carrinho.class);
-        i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(i);
     }
 
     public void verCarrinho(View view)
     {
         Intent i = new Intent(this, Carrinho.class);
-        i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(i);
     }
 }

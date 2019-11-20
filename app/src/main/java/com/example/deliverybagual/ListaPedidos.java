@@ -18,13 +18,13 @@ public class ListaPedidos extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.lista_pedidos);
-        this.setTitle("Pedidos");
+        this.setTitle(R.string.pedidos);
 
         List<String> pedidos = new ArrayList<>(Arrays.asList("Pedido"));
         for (int i = 0; i < 30; i++) {
             pedidos.add("Pedido");
         }
-        ListView listView = findViewById(R.id.pedidos_list);
+        ListView listView = findViewById(R.id.listaPedidos);
 
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, pedidos);
         listView.setAdapter(adapter);
@@ -32,7 +32,7 @@ public class ListaPedidos extends AppCompatActivity {
 
     public void novoPedido(View view)
     {
-        Intent i = new Intent(this, Carrinho.class);
+        Intent i = new Intent(this, AdicionarItem.class);
         startActivity(i);
     }
 }

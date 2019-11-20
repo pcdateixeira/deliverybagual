@@ -1,10 +1,17 @@
 <resources>
     <string name="app_name">Delivery Bagual</string>
+    <string name="adicionar">Adicionar</string>
+    <string name="adicionaritens">Adicionar itens</string>
+    <string name="adicioneitens">Adicione itens ao pedido</string>
     <string name="pedidos">Pedidos</string>
-    <string name="listavazia">Nenhum pedido em andamento</string>
     <string name="novopedido">Novo pedido</string>
-    <string name="adicione_itens">Adicione itens ao pedido</string>
-    <string name="itens_adicionados">Itens adicionados</string>
+    <string name="desejacancelarpeiddo">Deseja cancelar o pedido?</string>
+    <string name="cancelarpeiddo">Cancelar o pedido</string>
+    <string name="listavazia">Nenhum pedido em andamento</string>
+    <string name="carrinho">Carrinho</string>
+    <string name="vercarrinho">Ver carrinho</string>
+    <string name="proximo">Próximo</string>
+    <string name="continuar">Continuar</string>
     <string name="bovina">Bovina</string>
     <string name="suina">Suína</string>
     <string name="frango">Frango</string>
@@ -27,8 +34,4 @@
     <string name="maionese">Salada de maionese</string>
     <string name="porcaopequena">Espeto pequeno (700g)</string>
     <string name="porcaogrande">Espeto grande (1,2kg)</string>
-    <string name="adicionar">Adicionar</string>
-    <string name="novo_pedido">Novo pedido</string>
-    <string name="adicionar_tens">Adicionar itens</string>
-    <string name="proximo">Próximo</string>
 </resources>

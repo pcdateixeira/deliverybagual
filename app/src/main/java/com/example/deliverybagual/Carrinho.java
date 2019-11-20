@@ -25,7 +25,7 @@ public class Carrinho extends AppCompatActivity {
         for (int i = 0; i < 30; i++) {
             itens.add("Item");
         }
-        ListView listView = findViewById(R.id.itens_list);
+        ListView listView = findViewById(R.id.listaItens);
 
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, itens);
         listView.setAdapter(adapter);
@@ -38,9 +38,9 @@ public class Carrinho extends AppCompatActivity {
         startActivity(i);
     }
 
-    public void confirmarLista(View view)
+    public void agendarEntrega(View view)
     {
-        Intent i = new Intent(this, AdicionarItem.class);
+        Intent i = new Intent(this, AgendarEntrega.class);
         startActivity(i);
     }
 
@@ -49,16 +49,19 @@ public class Carrinho extends AppCompatActivity {
         new AlertDialog.Builder(this)
                 .setIcon(android.R.drawable.ic_dialog_alert)
                 //.setTitle("Closing Activity")
-                .setMessage("Deseja cancelar o pedido?")
-                .setPositiveButton("Cancelar pedido", new DialogInterface.OnClickListener()
+                .setMessage(R.string.desejacancelarpeiddo)
+                .setPositiveButton(R.string.cancelarpeiddo, new DialogInterface.OnClickListener()
                 {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
+                        Intent i = new Intent(Carrinho.this, ListaPedidos.class);
+                        i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                        startActivity(i);
                         finish();
                     }
 
                 })
-                .setNegativeButton("Continuar", null)
+                .setNegativeButton(R.string.continuar, null)
                 .show();
     }
 }
