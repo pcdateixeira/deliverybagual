@@ -4,6 +4,7 @@
     <string name="adicionaritens">Adicionar itens</string>
     <string name="adicioneitens">Adicione itens ao pedido</string>
     <string name="pedidos">Pedidos</string>
+    <string name="confirmacaoDoPedido">Confirmação do pedido</string>
     <string name="novopedido">Novo pedido</string>
     <string name="desejacancelarpeiddo">Deseja cancelar o pedido?</string>
     <string name="cancelarpedido">Cancelar o pedido</string>
@@ -12,6 +13,9 @@
     <string name="vercarrinho">Ver carrinho</string>
     <string name="selecioneDataDeEntrega">Selecione a data de entrega</string>
     <string name="entregaImediata">Entrega imediata</string>
+    <string name="sucessoPedido">Seu pedido foi realizado com sucesso!!</string>
+    <string name="verPedidos">Ver pedidos realizados</string>
+    <string name="confirmacao">Confirmação</string>
     <string name="proximo">Próximo</string>
     <string name="continuar">Continuar</string>
     <string name="bovina">Bovina</string>
