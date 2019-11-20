@@ -10,6 +10,8 @@
     <string name="listavazia">Nenhum pedido em andamento</string>
     <string name="carrinho">Carrinho</string>
     <string name="vercarrinho">Ver carrinho</string>
+    <string name="selecioneDataDeEntrega">Selecione a data de entrega</string>
+    <string name="entregaImediata">Entrega imediata</string>
     <string name="proximo">Próximo</string>
     <string name="continuar">Continuar</string>
     <string name="bovina">Bovina</string>

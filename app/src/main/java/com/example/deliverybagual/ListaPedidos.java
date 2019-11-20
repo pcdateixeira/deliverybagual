@@ -13,7 +13,7 @@ import java.util.Arrays;
 import java.util.List;
 
 public class ListaPedidos extends AppCompatActivity {
-
+    private int num_pedidos = 5;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,7 +21,7 @@ public class ListaPedidos extends AppCompatActivity {
         this.setTitle(R.string.pedidos);
 
         List<String> pedidos = new ArrayList<>(Arrays.asList("Pedido"));
-        for (int i = 0; i < 30; i++) {
+        for (int i = 0; i < num_pedidos; i++) {
             pedidos.add("Pedido");
         }
         ListView listView = findViewById(R.id.listaPedidos);
