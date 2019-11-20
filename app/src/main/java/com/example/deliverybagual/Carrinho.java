@@ -2,7 +2,17 @@ package com.example.deliverybagual;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class Carrinho extends AppCompatActivity {
 
@@ -10,5 +20,45 @@ public class Carrinho extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.carrinho);
+
+        List<String> itens = new ArrayList<>(Arrays.asList("Item"));
+        for (int i = 0; i < 30; i++) {
+            itens.add("Item");
+        }
+        ListView listView = findViewById(R.id.itens_list);
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, itens);
+        listView.setAdapter(adapter);
+    }
+
+    public void adicionarMaisItens(View view)
+    {
+        Intent i = new Intent(this, AdicionarItem.class);
+        //i.putExtra("data", tituloPedido.getText().toString());
+        startActivity(i);
+    }
+
+    public void confirmarLista(View view)
+    {
+        Intent i = new Intent(this, AdicionarItem.class);
+        startActivity(i);
+    }
+
+    @Override
+    public void onBackPressed() {
+        new AlertDialog.Builder(this)
+                .setIcon(android.R.drawable.ic_dialog_alert)
+                //.setTitle("Closing Activity")
+                .setMessage("Deseja cancelar o pedido?")
+                .setPositiveButton("Cancelar pedido", new DialogInterface.OnClickListener()
+                {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        finish();
+                    }
+
+                })
+                .setNegativeButton("Continuar", null)
+                .show();
     }
 }

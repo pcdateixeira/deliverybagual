@@ -6,9 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.ListView;
-import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -26,7 +24,7 @@ public class ListaPedidos extends AppCompatActivity {
         for (int i = 0; i < 30; i++) {
             pedidos.add("Pedido");
         }
-        ListView listView = (ListView) findViewById(R.id.pedidos_list_view);
+        ListView listView = findViewById(R.id.pedidos_list);
 
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, pedidos);
         listView.setAdapter(adapter);
@@ -34,8 +32,7 @@ public class ListaPedidos extends AppCompatActivity {
 
     public void novoPedido(View view)
     {
-        Intent i = new Intent(this, AdicionarItem.class);
-        //i.putExtra("data", tituloPedido.getText().toString());
+        Intent i = new Intent(this, Carrinho.class);
         startActivity(i);
     }
 }

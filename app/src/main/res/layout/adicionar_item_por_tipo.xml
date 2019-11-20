@@ -60,8 +60,8 @@
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
-        android:onClick="VerCarrinho"
-        android:text="@string/vercarrinho"
+        android:onClick="verCarrinho"
+        android:text="@string/itens_adicionados"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />

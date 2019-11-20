@@ -4,7 +4,7 @@
     <string name="listavazia">Nenhum pedido em andamento</string>
     <string name="novopedido">Novo pedido</string>
     <string name="adicione_itens">Adicione itens ao pedido</string>
-    <string name="vercarrinho">Itens adicionados</string>
+    <string name="itens_adicionados">Itens adicionados</string>
     <string name="bovina">Bovina</string>
     <string name="suina">Suína</string>
     <string name="frango">Frango</string>
@@ -29,4 +29,6 @@
     <string name="porcaogrande">Espeto grande (1,2kg)</string>
     <string name="adicionar">Adicionar</string>
     <string name="novo_pedido">Novo pedido</string>
+    <string name="adicionar_tens">Adicionar itens</string>
+    <string name="proximo">Próximo</string>
 </resources>
