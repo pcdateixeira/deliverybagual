@@ -50,7 +50,7 @@ public class Carrinho extends AppCompatActivity {
                 .setIcon(android.R.drawable.ic_dialog_alert)
                 //.setTitle("Closing Activity")
                 .setMessage(R.string.desejacancelarpeiddo)
-                .setPositiveButton(R.string.cancelarpeiddo, new DialogInterface.OnClickListener()
+                .setPositiveButton(R.string.cancelarpedido, new DialogInterface.OnClickListener()
                 {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
