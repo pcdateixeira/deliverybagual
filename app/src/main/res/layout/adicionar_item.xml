@@ -7,11 +7,11 @@
     tools:context=".AdicionarItem">
 
     <TextView
-        android:id="@+id/itens"
+        android:id="@+id/texto_ajuda"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:text="@string/itens"
+        android:text="@string/adicione_itens"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -53,12 +53,10 @@
         android:layout_height="wrap_content"
         android:onClick="selecionaItem"
         android:text="@string/suina"
-        app:layout_constraintBottom_toTopOf="@+id/botaoAperitivos"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/botaoBovina"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_chainStyle="packed" />
+        app:layout_constraintTop_toTopOf="@+id/botaoBovina" />
 
     <Button
         android:id="@+id/botaoFrango"
@@ -76,8 +74,7 @@
         android:layout_height="wrap_content"
         android:onClick="selecionaItem"
         android:text="@string/aperitivos"
-        app:layout_constraintBottom_toTopOf="@+id/botaoCarrinho"
         app:layout_constraintEnd_toEndOf="@+id/botaoSuina"
-        app:layout_constraintTop_toBottomOf="@+id/botaoSuina" />
+        app:layout_constraintTop_toTopOf="@+id/botaoFrango" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

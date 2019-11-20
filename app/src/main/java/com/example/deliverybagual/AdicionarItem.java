@@ -10,13 +10,6 @@ import android.widget.TextView;
 
 public class AdicionarItem extends AppCompatActivity {
 
-    private TextView itens;
-    private Button botaoBovina;
-    private Button botaoSuina;
-    private Button botaoFrango;
-    private Button botaoAperitivos;
-    private Button botaoCarrinho;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
