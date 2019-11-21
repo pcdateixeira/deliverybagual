@@ -102,7 +102,7 @@ public class AgendarEntrega extends AppCompatActivity implements DatePickerDialo
         }
         // Informações pertinentes estão todas no anoDaEntrega, ...
 
-        Intent i = new Intent(this, Confirmacao.class);
+        Intent i = new Intent(this, EscolherChurrascaria.class);
         startActivity(i);
     }
 

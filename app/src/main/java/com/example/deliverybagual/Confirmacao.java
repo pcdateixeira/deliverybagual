@@ -24,7 +24,8 @@ public class Confirmacao extends AppCompatActivity {
     }
 
     public void finalizaPedido(View view){
-        Intent i = new Intent(this, EscolherChurrascaria.class);
+        Intent i = new Intent(this, ListaPedidos.class);
+        i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(i);
     }
 }
