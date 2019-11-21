@@ -11,14 +11,15 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="AllowBackup,GoogleAppIndexingWarning">
-        <activity android:name=".EscolherChurrascaria"/>
-        <activity android:name=".Confirmacao"/>
+        <activity android:name=".InformacoesPedido"></activity>
+        <activity android:name=".EscolherChurrascaria" />
+        <activity android:name=".Confirmacao" />
         <activity android:name=".AgendarEntrega" />
-        <activity android:name=".AdicionarItemPorTamanho"/>
-        <activity android:name=".Carrinho"/>
-        <activity android:name=".AdicionarItemPorTipo"/>
-        <activity android:name=".AdicionarItem"/>
-        <activity android:name=".ResumoPedido"/>
+        <activity android:name=".AdicionarItemPorTamanho" />
+        <activity android:name=".Carrinho" />
+        <activity android:name=".AdicionarItemPorTipo" />
+        <activity android:name=".AdicionarItem" />
+        <activity android:name=".ResumoPedido" />
         <activity android:name=".ListaPedidos">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

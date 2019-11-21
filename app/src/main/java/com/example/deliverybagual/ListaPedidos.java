@@ -2,9 +2,11 @@ package com.example.deliverybagual;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
@@ -25,6 +27,15 @@ public class ListaPedidos extends AppCompatActivity {
             pedidos.add("Pedido");
         }
         ListView listView = findViewById(R.id.listaPedidos);
+        final Context context = this;
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent = new Intent(context, InformacoesPedido.class);
+                startActivity(intent);
+            }
+        });
 
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, pedidos);
         listView.setAdapter(adapter);
