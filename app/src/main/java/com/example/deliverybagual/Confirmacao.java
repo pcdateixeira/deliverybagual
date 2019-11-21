@@ -1,5 +1,7 @@
 package com.example.deliverybagual;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -24,6 +26,13 @@ public class Confirmacao extends AppCompatActivity {
     }
 
     public void finalizaPedido(View view){
+        Intent i = new Intent(this, ListaPedidos.class);
+        i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(i);
+    }
+
+    @Override
+    public void onBackPressed() {
         Intent i = new Intent(this, ListaPedidos.class);
         i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(i);
