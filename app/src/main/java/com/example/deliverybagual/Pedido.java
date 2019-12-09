@@ -61,11 +61,7 @@ public class Pedido implements Serializable {
         String infoText = "Itens:\n";
 
         for (Item item : items) {
-            if (item.getAmount() > 1) {
-                infoText += item.getAmount() + "x ";
-            }
-
-            infoText += item.getName() + "\n";
+            infoText += item + "\n";
         }
 
         infoText += "\nChurrascaria:\n" + churrascaria + "\n\nValor:\nR$ " + preco;

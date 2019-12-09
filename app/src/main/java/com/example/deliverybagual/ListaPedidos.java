@@ -45,12 +45,15 @@ public class ListaPedidos extends AppCompatActivity {
     @Override
     protected void onNewIntent(Intent intent) {
         Pedido pedido = (Pedido) intent.getSerializableExtra("pedido");
-        adapter.add(pedido);
+        if (pedido != null) {
+            adapter.add(pedido);
+        }
     }
 
     public void novoPedido(View view)
     {
         Intent i = new Intent(this, AdicionarItem.class);
+        i.putExtra("pedido", new Pedido());
         startActivity(i);
     }
 }

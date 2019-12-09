@@ -9,7 +9,7 @@
     <string name="desejacancelarpeiddo">Deseja cancelar o pedido?</string>
     <string name="cancelarpedido">Cancelar o pedido</string>
     <string name="listavazia">Nenhum pedido em andamento</string>
-    <string name="carrinho">Carrinho</string>
+    <string name="carrinho">Itens adicionados</string>
     <string name="vercarrinho">Ver carrinho</string>
     <string name="selecioneDataDeEntrega">Selecione a data de entrega</string>
     <string name="entregaImediata">Entrega imediata</string>

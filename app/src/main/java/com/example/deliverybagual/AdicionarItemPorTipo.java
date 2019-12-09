@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 public class AdicionarItemPorTipo extends AppCompatActivity {
+    private Pedido pedido;
 
     private TextView titulo;
     private Button itemUm;
@@ -28,6 +29,8 @@ public class AdicionarItemPorTipo extends AppCompatActivity {
         itemTres = findViewById(R.id.botaoItemTres);
         itemQuatro = findViewById(R.id.botaoItemQuatro);
         botaoCarrinho = findViewById(R.id.botaoCarrinho);
+
+        this.pedido = (Pedido) getIntent().getSerializableExtra("pedido");
 
         String tipoItem = getIntent().getStringExtra("tipo");
         switch(tipoItem) {
@@ -71,12 +74,14 @@ public class AdicionarItemPorTipo extends AppCompatActivity {
         Button b = (Button) view;
 
         i.putExtra("tipo", b.getText().toString());
+        i.putExtra("pedido", this.pedido);
         startActivity(i);
     }
 
     public void verCarrinho(View view)
     {
         Intent i = new Intent(this, Carrinho.class);
+        i.putExtra("pedido", this.pedido);
         startActivity(i);
     }
 }

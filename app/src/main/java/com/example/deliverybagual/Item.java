@@ -45,6 +45,11 @@ public class Item implements Serializable {
     @NonNull
     @Override
     public String toString() {
-        return name + "\n" + amount;
+        if (getAmount() > 1) {
+            return getAmount() + "x " + getName();
+        }
+        else {
+            return getName();
+        }
     }
 }

@@ -15,32 +15,32 @@ import java.util.Arrays;
 import java.util.List;
 
 public class Carrinho extends AppCompatActivity {
+    private Pedido pedido;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.carrinho);
 
-        List<String> itens = new ArrayList<>(Arrays.asList("Item"));
-        for (int i = 0; i < 30; i++) {
-            itens.add("Item");
-        }
+        this.pedido = (Pedido) getIntent().getSerializableExtra("pedido");
+
         ListView listView = findViewById(R.id.listaItens);
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, itens);
+        ArrayAdapter<Item> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, this.pedido.items);
         listView.setAdapter(adapter);
     }
 
     public void adicionarMaisItens(View view)
     {
         Intent i = new Intent(this, AdicionarItem.class);
-        //i.putExtra("data", tituloPedido.getText().toString());
+        i.putExtra("pedido", this.pedido);
         startActivity(i);
     }
 
     public void agendarEntrega(View view)
     {
         Intent i = new Intent(this, AgendarEntrega.class);
+        i.putExtra("pedido", this.pedido);
         startActivity(i);
     }
 
@@ -48,7 +48,6 @@ public class Carrinho extends AppCompatActivity {
     public void onBackPressed() {
         new AlertDialog.Builder(this)
                 .setIcon(android.R.drawable.ic_dialog_alert)
-                //.setTitle("Closing Activity")
                 .setMessage(R.string.desejacancelarpeiddo)
                 .setPositiveButton(R.string.cancelarpedido, new DialogInterface.OnClickListener()
                 {

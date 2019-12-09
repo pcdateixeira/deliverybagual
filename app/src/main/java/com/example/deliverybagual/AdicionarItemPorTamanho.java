@@ -7,9 +7,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 
 public class AdicionarItemPorTamanho extends AppCompatActivity {
+    private Pedido pedido;
+    private String tipoItem;
 
     private TextView titulo;
     private RadioButton radioPorcaoPequena;
@@ -28,8 +31,11 @@ public class AdicionarItemPorTamanho extends AppCompatActivity {
         botaoAdicionar = findViewById(R.id.botaoAdicionar);
         botaoCarrinho = findViewById(R.id.botaoCarrinho);
 
-        String tipoItem = getIntent().getStringExtra("tipo");
-        switch(tipoItem) { // essa secao switch-case vai ser mais curta no futuro
+        this.pedido = (Pedido) getIntent().getSerializableExtra("pedido");
+
+        this.tipoItem = getIntent().getStringExtra("tipo");
+
+        switch(this.tipoItem) {
             case "Maminha":
                 titulo.setText(R.string.maminha);
                 radioPorcaoPequena.setText(R.string.porcaopequena);
@@ -112,15 +118,23 @@ public class AdicionarItemPorTamanho extends AppCompatActivity {
         radioPorcaoGrande.setVisibility(View.VISIBLE);
     }
 
-    // Os dois metodos abaixo sao iguais por enquanto, a diferenca e que o adicionaItem colocaria um item no carrinho de compras do usuario, enquanto o verCarrinho mandaria pro carrinho sem adicionar o item
     public void adicionaItem(View view) {
+        RadioGroup radioGroup = (RadioGroup) findViewById(R.id.radioGroup);
+        int selectedId = radioGroup.getCheckedRadioButtonId();
+        RadioButton selectedButton = (RadioButton) findViewById(selectedId);
+        CharSequence tamanhoItem = selectedButton.getText();
+
+        this.pedido.addItem(tipoItem + ", " + tamanhoItem);
+
         Intent i = new Intent(this, Carrinho.class);
+        i.putExtra("pedido", this.pedido);
         startActivity(i);
     }
 
     public void verCarrinho(View view)
     {
         Intent i = new Intent(this, Carrinho.class);
+        i.putExtra("pedido", this.pedido);
         startActivity(i);
     }
 }
