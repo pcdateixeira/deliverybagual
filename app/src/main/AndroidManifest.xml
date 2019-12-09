@@ -20,7 +20,7 @@
         <activity android:name=".AdicionarItemPorTipo" />
         <activity android:name=".AdicionarItem" />
         <activity android:name=".ResumoPedido" />
-        <activity android:name=".ListaPedidos">
+        <activity android:name=".ListaPedidos" android:launchMode="singleTop">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

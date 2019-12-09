@@ -12,11 +12,11 @@ import android.widget.ListView;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.LinkedList;
 import java.util.List;
 
 public class ListaPedidos extends AppCompatActivity {
-    private int num_pedidos = 5;
-    public Pedidos pedidos;
+    ArrayAdapter<String> adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,31 +24,7 @@ public class ListaPedidos extends AppCompatActivity {
         setContentView(R.layout.lista_pedidos);
         this.setTitle(R.string.pedidos);
 
-
-        List<String> pedidos_mock = new ArrayList<>(Arrays.asList("Pedido"));
-        for (int i = 0; i < num_pedidos; i++) {
-            pedidos_mock.add("Pedido");
-        }
-
-        ArrayAdapter<String> adapter;
-
-        try {
-            Pedido p = (Pedido) getIntent().getSerializableExtra("pedido");
-            if (p != null) {
-                pedidos.addPedido(p);
-            }
-
-            List<String> l = new ArrayList<>();
-
-            for(Pedido ped : pedidos.pedidoList){
-                l.add(ped.getDeliverInfo());
-            }
-            adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, l);
-        }
-        catch (NullPointerException e) {
-            adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, pedidos_mock);
-        }
-
+        adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1);
 
         ListView listView = findViewById(R.id.listaPedidos);
         final Context context = this;
@@ -62,6 +38,12 @@ public class ListaPedidos extends AppCompatActivity {
         });
 
         listView.setAdapter(adapter);
+    }
+
+    @Override
+    protected void onNewIntent(Intent intent) {
+        Pedido pedido = (Pedido) intent.getSerializableExtra("pedido");
+        adapter.add(pedido.getDeliverInfo());
     }
 
     public void novoPedido(View view)
