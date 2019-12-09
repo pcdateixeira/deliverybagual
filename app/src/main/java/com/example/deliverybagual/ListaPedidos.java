@@ -16,16 +16,40 @@ import java.util.List;
 
 public class ListaPedidos extends AppCompatActivity {
     private int num_pedidos = 5;
+    public Pedidos pedidos;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.lista_pedidos);
         this.setTitle(R.string.pedidos);
 
-        List<String> pedidos = new ArrayList<>(Arrays.asList("Pedido"));
+
+        List<String> pedidos_mock = new ArrayList<>(Arrays.asList("Pedido"));
         for (int i = 0; i < num_pedidos; i++) {
-            pedidos.add("Pedido");
+            pedidos_mock.add("Pedido");
         }
+
+        ArrayAdapter<String> adapter;
+
+        try {
+            Pedido p = (Pedido) getIntent().getSerializableExtra("pedido");
+            if (p != null) {
+                pedidos.addPedido(p);
+            }
+
+            List<String> l = new ArrayList<>();
+
+            for(Pedido ped : pedidos.pedidoList){
+                l.add(ped.getDeliverInfo());
+            }
+            adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, l);
+        }
+        catch (NullPointerException e) {
+            adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, pedidos_mock);
+        }
+
+
         ListView listView = findViewById(R.id.listaPedidos);
         final Context context = this;
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -37,7 +61,6 @@ public class ListaPedidos extends AppCompatActivity {
             }
         });
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, pedidos);
         listView.setAdapter(adapter);
     }
 

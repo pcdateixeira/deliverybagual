@@ -28,6 +28,11 @@ public class Confirmacao extends AppCompatActivity {
     public void finalizaPedido(View view){
         Intent i = new Intent(this, ListaPedidos.class);
         i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        Pedido p = new Pedido();
+        p.addItem("Carne");
+        p.setChurrascaria("Churrascaria1");
+        p.setTimeInfo(1,1,1,1,1);
+        i.putExtra("pedido", p);
         startActivity(i);
     }
 
@@ -35,6 +40,8 @@ public class Confirmacao extends AppCompatActivity {
     public void onBackPressed() {
         Intent i = new Intent(this, ListaPedidos.class);
         i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        Pedido p = new Pedido();
+        i.putExtra("pedido", p);
         startActivity(i);
     }
 }
