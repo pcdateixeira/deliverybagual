@@ -1,11 +1,14 @@
 package com.example.deliverybagual;
 
+import androidx.annotation.NonNull;
+
 import java.io.Serializable;
 import java.util.ArrayList;
 
 public class Pedido implements Serializable {
     public ArrayList<Item> items = new ArrayList<Item>();
     public String churrascaria;
+    public String preco;
     public int anoDaEntrega=-1;
     public int mesDaEntrega=-1;
     public int diaDaEntrega=-1;
@@ -34,6 +37,10 @@ public class Pedido implements Serializable {
         this.churrascaria = churrascaria;
     }
 
+    public void setPreco(String preco){
+        this.preco = preco;
+    }
+
     public void setTimeInfo(int ano, int mes, int dia, int hora, int minuto){
         this.anoDaEntrega = ano;
         this.mesDaEntrega = mes;
@@ -50,7 +57,25 @@ public class Pedido implements Serializable {
         }
     }
 
-    public String getDeliverInfo(){
+    public String getInfoText() {
+        String infoText = "Itens:\n";
+
+        for (Item item : items) {
+            if (item.getAmount() > 1) {
+                infoText += item.getAmount() + "x ";
+            }
+
+            infoText += item.getName() + "\n";
+        }
+
+        infoText += "\nChurrascaria:\n" + churrascaria + "\n\nValor:\nR$ " + preco;
+
+        return infoText;
+    }
+
+    @NonNull
+    @Override
+    public String toString() {
         return horaDaEntrega + ":" + minutoDaEntrega + " - " +
                 diaDaEntrega + "/" + mesDaEntrega + "/" + anoDaEntrega +
                 churrascaria;

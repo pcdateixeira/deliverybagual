@@ -31,6 +31,7 @@ public class Confirmacao extends AppCompatActivity {
         Pedido p = new Pedido();
         p.addItem("Carne");
         p.setChurrascaria("Churrascaria1");
+        p.setPreco("60,00");
         p.setTimeInfo(1,1,1,1,1);
         i.putExtra("pedido", p);
         startActivity(i);

@@ -16,7 +16,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class ListaPedidos extends AppCompatActivity {
-    ArrayAdapter<String> adapter;
+    ArrayAdapter<Pedido> adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,7 +24,7 @@ public class ListaPedidos extends AppCompatActivity {
         setContentView(R.layout.lista_pedidos);
         this.setTitle(R.string.pedidos);
 
-        adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1);
+        adapter = new ArrayAdapter<Pedido>(this, android.R.layout.simple_list_item_1);
 
         ListView listView = findViewById(R.id.listaPedidos);
         final Context context = this;
@@ -33,6 +33,8 @@ public class ListaPedidos extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent intent = new Intent(context, InformacoesPedido.class);
+                Pedido pedido = adapter.getItem(position);
+                intent.putExtra("pedido", pedido);
                 startActivity(intent);
             }
         });
@@ -43,7 +45,7 @@ public class ListaPedidos extends AppCompatActivity {
     @Override
     protected void onNewIntent(Intent intent) {
         Pedido pedido = (Pedido) intent.getSerializableExtra("pedido");
-        adapter.add(pedido.getDeliverInfo());
+        adapter.add(pedido);
     }
 
     public void novoPedido(View view)
