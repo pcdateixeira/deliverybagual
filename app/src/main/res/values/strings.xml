@@ -38,8 +38,10 @@
     <string name="paoalho">Pão de alho</string>
     <string name="xixo">Xixo</string>
     <string name="maionese">Salada de maionese</string>
-    <string name="porcaopequena">Espeto pequeno (700g)</string>
-    <string name="porcaogrande">Espeto grande (1,2kg)</string>
+    <string name="espetopequeno">Espeto pequeno (700g)</string>
+    <string name="espetogrande">Espeto grande (1,2kg)</string>
+    <string name="porcaopequena">Porção pequena</string>
+    <string name="porcaogrande">Porção grande</string>
     <string name="churrascariasdisponiveis">Churrascarias disponíveis</string>
     <string name="reviseseupedido">Revise seu pedido</string>
     <string name="confirmar">Confirmar</string>

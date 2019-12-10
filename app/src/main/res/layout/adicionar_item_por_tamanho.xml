@@ -65,7 +65,7 @@
             android:id="@+id/radioPorcaoPequena"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/porcaopequena"
+            android:text="@string/espetopequeno"
             android:visibility="invisible"
             tools:layout_editor_absoluteX="87dp"
             tools:layout_editor_absoluteY="532dp" />
@@ -74,7 +74,7 @@
             android:id="@+id/radioPorcaoGrande"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/porcaogrande"
+            android:text="@string/espetogrande"
             android:visibility="invisible"
             tools:layout_editor_absoluteX="87dp"
             tools:layout_editor_absoluteY="564dp" />

@@ -38,61 +38,61 @@ public class AdicionarItemPorTamanho extends AppCompatActivity {
         switch(this.tipoItem) {
             case "Maminha":
                 titulo.setText(R.string.maminha);
-                radioPorcaoPequena.setText(R.string.porcaopequena);
-                radioPorcaoGrande.setText(R.string.porcaogrande);
+                radioPorcaoPequena.setText(R.string.espetopequeno);
+                radioPorcaoGrande.setText(R.string.espetogrande);
                 break;
             case "Picanha":
                 titulo.setText(R.string.picanha);
-                radioPorcaoPequena.setText(R.string.porcaopequena);
-                radioPorcaoGrande.setText(R.string.porcaogrande);
+                radioPorcaoPequena.setText(R.string.espetopequeno);
+                radioPorcaoGrande.setText(R.string.espetogrande);
                 break;
             case "Costela":
                 titulo.setText(R.string.costela);
-                radioPorcaoPequena.setText(R.string.porcaopequena);
-                radioPorcaoGrande.setText(R.string.porcaogrande);
+                radioPorcaoPequena.setText(R.string.espetopequeno);
+                radioPorcaoGrande.setText(R.string.espetogrande);
                 break;
             case "Ripa da chuleta":
                 titulo.setText(R.string.chuleta);
-                radioPorcaoPequena.setText(R.string.porcaopequena);
-                radioPorcaoGrande.setText(R.string.porcaogrande);
+                radioPorcaoPequena.setText(R.string.espetopequeno);
+                radioPorcaoGrande.setText(R.string.espetogrande);
             case "Pernil":
                 titulo.setText(R.string.maminha);
-                radioPorcaoPequena.setText(R.string.porcaopequena);
-                radioPorcaoGrande.setText(R.string.porcaogrande);
+                radioPorcaoPequena.setText(R.string.espetopequeno);
+                radioPorcaoGrande.setText(R.string.espetogrande);
                 break;
             case "Lombo":
                 titulo.setText(R.string.lombo);
-                radioPorcaoPequena.setText(R.string.porcaopequena);
-                radioPorcaoGrande.setText(R.string.porcaogrande);
+                radioPorcaoPequena.setText(R.string.espetopequeno);
+                radioPorcaoGrande.setText(R.string.espetogrande);
                 break;
             case "Linguiça":
                 titulo.setText(R.string.linguica);
-                radioPorcaoPequena.setText(R.string.porcaopequena);
-                radioPorcaoGrande.setText(R.string.porcaogrande);
+                radioPorcaoPequena.setText(R.string.espetopequeno);
+                radioPorcaoGrande.setText(R.string.espetogrande);
                 break;
             case "Bisteca":
                 titulo.setText(R.string.bisteca);
-                radioPorcaoPequena.setText(R.string.porcaopequena);
-                radioPorcaoGrande.setText(R.string.porcaogrande);
+                radioPorcaoPequena.setText(R.string.espetopequeno);
+                radioPorcaoGrande.setText(R.string.espetogrande);
             case "Peito":
                 titulo.setText(R.string.peito);
-                radioPorcaoPequena.setText(R.string.porcaopequena);
-                radioPorcaoGrande.setText(R.string.porcaogrande);
+                radioPorcaoPequena.setText(R.string.espetopequeno);
+                radioPorcaoGrande.setText(R.string.espetogrande);
                 break;
             case "Coxa":
                 titulo.setText(R.string.coxa);
-                radioPorcaoPequena.setText(R.string.porcaopequena);
-                radioPorcaoGrande.setText(R.string.porcaogrande);
+                radioPorcaoPequena.setText(R.string.espetopequeno);
+                radioPorcaoGrande.setText(R.string.espetogrande);
                 break;
             case "Sobrecoxa":
                 titulo.setText(R.string.sobrecoxa);
-                radioPorcaoPequena.setText(R.string.porcaopequena);
-                radioPorcaoGrande.setText(R.string.porcaogrande);
+                radioPorcaoPequena.setText(R.string.espetopequeno);
+                radioPorcaoGrande.setText(R.string.espetogrande);
                 break;
             case "Coraçãozinho":
                 titulo.setText(R.string.coracao);
-                radioPorcaoPequena.setText(R.string.porcaopequena);
-                radioPorcaoGrande.setText(R.string.porcaogrande);
+                radioPorcaoPequena.setText(R.string.espetopequeno);
+                radioPorcaoGrande.setText(R.string.espetogrande);
             case "Polenta":
                 titulo.setText(R.string.polenta);
                 radioPorcaoPequena.setText(R.string.porcaopequena);
@@ -105,8 +105,8 @@ public class AdicionarItemPorTamanho extends AppCompatActivity {
                 break;
             case "Xixo":
                 titulo.setText(R.string.xixo);
-                radioPorcaoPequena.setText(R.string.porcaopequena);
-                radioPorcaoGrande.setText(R.string.porcaogrande);
+                radioPorcaoPequena.setText(R.string.espetopequeno);
+                radioPorcaoGrande.setText(R.string.espetogrande);
                 break;
             case "Salada de maionese":
                 titulo.setText(R.string.maionese);
