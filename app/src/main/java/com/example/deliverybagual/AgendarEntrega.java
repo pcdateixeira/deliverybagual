@@ -12,9 +12,11 @@ import android.widget.DatePicker;
 import android.widget.TimePicker;
 
 import java.sql.Time;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
 public class AgendarEntrega extends AppCompatActivity implements DatePickerDialog.OnDateSetListener {
+    private Pedido pedido;
 
     Calendar calendar = Calendar.getInstance();
     private DatePicker datePicker;
@@ -27,19 +29,6 @@ public class AgendarEntrega extends AppCompatActivity implements DatePickerDialo
     private int diaDaEntrega=-1;
     private int horaDaEntrega=-1;
     private int minutoDaEntrega=-1;
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.agendar_entrega);
-        entregaImediata = (CheckBox) findViewById(R.id.entregaImediata);
-        entregaImediata.setVisibility(View.VISIBLE);
-        entregaImediata.setOnClickListener(first_radio_listener);
-        proximo = (Button) findViewById(R.id.botaoProximo2);
-        proximo.setVisibility(View.VISIBLE);
-        datePicker = (DatePicker) findViewById(R.id.datePicker);
-        timePicker = (TimePicker) findViewById(R.id.timePicker);
-    }
 
     View.OnClickListener first_radio_listener = new View.OnClickListener(){
         public void onClick(View v) {
@@ -54,12 +43,23 @@ public class AgendarEntrega extends AppCompatActivity implements DatePickerDialo
             }
         }
     };
-    public void onTimeSet(TimePicker view, int hourOfDay, int minute){
-        horaDaEntrega = hourOfDay;
-        minutoDaEntrega = minute;
-        view.setHour(hourOfDay);
-        view.setMinute(minute);
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.agendar_entrega);
+
+        this.pedido = (Pedido) getIntent().getSerializableExtra("pedido");
+
+        entregaImediata = (CheckBox) findViewById(R.id.entregaImediata);
+        entregaImediata.setVisibility(View.VISIBLE);
+        entregaImediata.setOnClickListener(first_radio_listener);
+        proximo = (Button) findViewById(R.id.botaoProximo2);
+        proximo.setVisibility(View.VISIBLE);
+        datePicker = (DatePicker) findViewById(R.id.datePicker);
+        timePicker = (TimePicker) findViewById(R.id.timePicker);
     }
+
     @Override
     public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
         // Gets the date from the user.
@@ -76,38 +76,12 @@ public class AgendarEntrega extends AppCompatActivity implements DatePickerDialo
 
 
     public void irParaPedidos(View view){
-        if(entregaImediata.isChecked()) {
-            anoDaEntrega = calendar.get(Calendar.YEAR);
-            mesDaEntrega = calendar.get(Calendar.MONTH);
-            diaDaEntrega = calendar.get(Calendar.DAY_OF_MONTH);
-            horaDaEntrega = calendar.get(Calendar.HOUR);
-            minutoDaEntrega = calendar.get(Calendar.MINUTE);
-        }
-        else {
-            if (anoDaEntrega == -1) {
-                anoDaEntrega = calendar.get(Calendar.YEAR);
-            }
-            if (mesDaEntrega == -1) {
-                mesDaEntrega = calendar.get(Calendar.MONTH);
-            }
-            if (diaDaEntrega == -1) {
-                diaDaEntrega = calendar.get(Calendar.DAY_OF_MONTH);
-            }
-            if (horaDaEntrega == -1) {
-                horaDaEntrega = calendar.get(Calendar.HOUR);
-            }
-            if (minutoDaEntrega == -1) {
-                minutoDaEntrega = calendar.get(Calendar.MINUTE);
-            }
-        }
-        // Informações pertinentes estão todas no anoDaEntrega, ...
+
+        this.pedido.setDataEntrega(calendar.getTime());
+        this.pedido.entregaImediata = entregaImediata.isChecked();
 
         Intent i = new Intent(this, EscolherChurrascaria.class);
+        i.putExtra("pedido", this.pedido);
         startActivity(i);
     }
-
-
-
-
-
 }

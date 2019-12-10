@@ -11,12 +11,16 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class Confirmacao extends AppCompatActivity {
+    private Pedido pedido;
     private TextView message;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.confirmacao);
         this.setTitle(R.string.confirmacaoDoPedido);
+
+        this.pedido = (Pedido) getIntent().getSerializableExtra("pedido");
+
         TextView title = (TextView) findViewById(R.id.confirmationTitle);
         title.setVisibility(View.VISIBLE);
         message = findViewById(R.id.message);
@@ -28,12 +32,7 @@ public class Confirmacao extends AppCompatActivity {
     public void finalizaPedido(View view){
         Intent i = new Intent(this, ListaPedidos.class);
         i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-        Pedido p = new Pedido();
-        p.addItem("Carne");
-        p.setChurrascaria("Churrascaria1");
-        p.setPreco("60,00");
-        p.setTimeInfo(1,1,1,1,1);
-        i.putExtra("pedido", p);
+        i.putExtra("pedido", this.pedido);
         startActivity(i);
     }
 
@@ -41,8 +40,7 @@ public class Confirmacao extends AppCompatActivity {
     public void onBackPressed() {
         Intent i = new Intent(this, ListaPedidos.class);
         i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-        Pedido p = new Pedido();
-        i.putExtra("pedido", p);
+        i.putExtra("pedido", this.pedido);
         startActivity(i);
     }
 }

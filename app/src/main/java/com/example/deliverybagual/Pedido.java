@@ -3,17 +3,15 @@ package com.example.deliverybagual;
 import androidx.annotation.NonNull;
 
 import java.io.Serializable;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 public class Pedido implements Serializable {
     public ArrayList<Item> items = new ArrayList<Item>();
-    public String churrascaria;
-    public String preco;
-    public int anoDaEntrega=-1;
-    public int mesDaEntrega=-1;
-    public int diaDaEntrega=-1;
-    public int horaDaEntrega=-1;
-    public int minutoDaEntrega=-1;
+    public Churrascaria churrascaria;
+    public Date dataEntrega;
+    public boolean entregaImediata;
 
     public void addItem(String name, int amount){
         Item i = new Item(name,amount);
@@ -33,20 +31,12 @@ public class Pedido implements Serializable {
         }
     }
 
-    public void setChurrascaria(String churrascaria){
+    public void setChurrascaria(Churrascaria churrascaria){
         this.churrascaria = churrascaria;
     }
 
-    public void setPreco(String preco){
-        this.preco = preco;
-    }
-
-    public void setTimeInfo(int ano, int mes, int dia, int hora, int minuto){
-        this.anoDaEntrega = ano;
-        this.mesDaEntrega = mes;
-        this.diaDaEntrega = dia;
-        this.horaDaEntrega = hora;
-        this.minutoDaEntrega = minuto;
+    public void setDataEntrega(Date date){
+        this.dataEntrega = date;
     }
 
     public void decreaseItemAmount(String name){
@@ -58,13 +48,17 @@ public class Pedido implements Serializable {
     }
 
     public String getInfoText() {
+        SimpleDateFormat format1 = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+        String formattedDate = format1.format(dataEntrega.getTime());
+
         String infoText = "Itens:\n";
 
         for (Item item : items) {
             infoText += item + "\n";
         }
 
-        infoText += "\nChurrascaria:\n" + churrascaria + "\n\nValor:\nR$ " + preco;
+        infoText += "\nChurrascaria:\n" + churrascaria.nome + "\n\nValor:\nR$ " + churrascaria.valor
+                 +  "\n\nData de entrega:\n" + formattedDate;
 
         return infoText;
     }
@@ -72,8 +66,9 @@ public class Pedido implements Serializable {
     @NonNull
     @Override
     public String toString() {
-        return horaDaEntrega + ":" + minutoDaEntrega + " - " +
-                diaDaEntrega + "/" + mesDaEntrega + "/" + anoDaEntrega +
-                churrascaria;
+        SimpleDateFormat format1 = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+        String formattedDate = format1.format(dataEntrega.getTime());
+
+        return churrascaria + "\nData de entrega: " + formattedDate;
     }
 }
